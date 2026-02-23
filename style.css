@@ -34,6 +34,27 @@ h3 {
     letter-spacing: -1px;
 }
 
+/* Language Toggle */
+.lang-btn {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    padding: 0.5rem 1rem;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    color: var(--text);
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 1001;
+    transition: all 0.3s;
+}
+
+.lang-btn:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
 /* Layout */
 .container {
     max-width: 1200px;
