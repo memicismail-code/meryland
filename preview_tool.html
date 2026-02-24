@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meryland | Mobile Previewer 📱</title>
+    <style>
+        :root {
+            --primary: #ff0080;
+            --secondary: #6a0dad;
+            --bg: #0a0a0c;
+            --surface: #1a1a1f;
+            --text: #f0f0f0;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        header {
+            padding: 1rem 2rem;
+            background: var(--surface);
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ff0080 0%, #7928ca 100%);
+            background-clip: text;
+            /* line 42: Fixed compatibility */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            color: var(--text);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        button:hover {
+            background: var(--glass-border);
+        }
+
+        button.active {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .size-inputs {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-dim);
+        }
+
+        input {
+            width: 60px;
+            background: var(--bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background: radial-gradient(circle at center, #1a1a1f 0%, #0a0a0c 100%);
+            overflow: auto;
+        }
+
+        .device-frame {
+            background: #111;
+            border: 12px solid #222;
+            border-radius: 40px;
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 0, 128, 0.1);
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+
+        .device-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 25px;
+            background: #222;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            z-index: 5;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Meryland Previewer 📱</div>
+        <div class="controls">
+            <button onclick="setDevice(390, 844, this)" class="active">iPhone 13/14</button>
+            <button onclick="setDevice(360, 800, this)">Samsung S22</button>
+            <button onclick="setDevice(375, 667, this)">iPhone SE</button>
+            <button onclick="setDevice(768, 1024, this)">iPad</button>
+            <button onclick="setDevice(1440, 900, this, true)">Desktop</button>
+
+            <div class="size-inputs">
+                W: <input type="number" id="w" value="390" onchange="updateManual()">
+                H: <input type="number" id="h" value="844" onchange="updateManual()">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="device-frame" id="frame" style="width: 390px; height: 844px;">
+            <iframe src="index.html"></iframe>
+        </div>
+    </main>
+
+    <script>
+        function setDevice(w, h, btn, isDesktop = false) {
+            const frame = document.getElementById('frame');
+            frame.style.width = w + 'px';
+            frame.style.height = h + 'px';
+
+            if (isDesktop) {
+                frame.style.borderRadius = '8px';
+                frame.style.borderWidth = '1px';
+                frame.style.borderColor = 'var(--glass-border)';
+            } else {
+                frame.style.borderRadius = '40px';
+                frame.style.borderWidth = '12px';
+                frame.style.borderColor = '#222';
+            }
+
+            document.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+
+            document.getElementById('w').value = w;
+            document.getElementById('h').value = h;
+        }
+
+        function updateManual() {
+            const w = document.getElementById('w').value;
+            const h = document.getElementById('h').value;
+            setDevice(w, h);
+        }
+    </script>
+</body>
+
+</html>
