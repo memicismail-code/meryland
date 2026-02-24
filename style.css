@@ -216,6 +216,31 @@ header {
     opacity: 0.9;
 }
 
+/* Trust Section */
+.trust-elements {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 4rem 0;
+    padding: 3rem;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.trust-item {
+    text-align: center;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.trust-item p {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
 /* Cart Overlay */
 .cart-btn {
     position: fixed;
@@ -281,8 +306,25 @@ footer {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     display: inline-block;
+}
+
+.footer-info {
+    margin-bottom: 2rem;
+}
+
+.footer-tagline {
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+}
+
+.footer-contact {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .footer-links {

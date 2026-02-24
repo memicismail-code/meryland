@@ -12,6 +12,11 @@ const translations = {
             biteSized: "🍔 Bite-Sized Series",
             perfectPairs: "💞 Perfect Pairs",
             artfulFinds: "✨ Artful Finds"
+        },
+        trust: {
+            secure: "✔ Secure checkout",
+            shipping: "✔ Shipping & return policy",
+            contact: "✔ Clear contact details"
         }
     },
     bs: {
@@ -27,6 +32,11 @@ const translations = {
             biteSized: "🍔 Bite-Sized serija",
             perfectPairs: "💞 Savršeni parovi",
             artfulFinds: "✨ Artful Finds kolekcija"
+        },
+        trust: {
+            secure: "✔ Sigurno plaćanje",
+            shipping: "✔ Dostava i povrat",
+            contact: "✔ Jasni kontakt podaci"
         }
     }
 };
@@ -123,6 +133,11 @@ function updateUI() {
     filterSelect.options[1].text = t.filters.biteSized;
     filterSelect.options[2].text = t.filters.perfectPairs;
     filterSelect.options[3].text = t.filters.artfulFinds;
+
+    // Update trust elements
+    document.getElementById('trust-secure').innerText = t.trust.secure;
+    document.getElementById('trust-shipping').innerText = t.trust.shipping;
+    document.getElementById('trust-contact').innerText = t.trust.contact;
 
     renderProducts();
 }
