@@ -402,12 +402,12 @@ footer {
     }
 
     .product-grid {
-        gap: 1rem;
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 2rem;
+        grid-template-columns: 1fr;
     }
 
     .product-image {
-        height: 180px;
+        height: 300px;
     }
 
     .product-info {
