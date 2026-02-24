@@ -103,7 +103,7 @@ function renderProducts() {
         const stars = '★'.repeat(product.rating) + '☆'.repeat(5 - product.rating);
         return `
         <div class="product-card animate-in">
-            <img src="${product.image}" alt="${product.name}" class="product-image">
+            <img src="${product.image}" alt="${product.name}" class="product-image" loading="lazy" decoding="async">
             <div class="product-info">
                 <div class="product-category">${product.category[currentLang]}</div>
                 <h3 class="product-name">${product.name}</h3>
@@ -114,6 +114,9 @@ function renderProducts() {
             </div>
         </div>
     `}).join('');
+
+    // Re-observe new elements
+    document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
 }
 
 function updateUI() {
