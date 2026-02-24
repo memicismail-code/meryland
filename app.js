@@ -6,8 +6,7 @@ const translations = {
         added: "Added! ✅",
         cartSummary: (count, total) => `Cart has ${count} items. Total: $${total.toFixed(2)} 💰`,
         footerLinks: ["🏠 Home", "✨ Collection", "🌿 About", "📞 Contact"],
-        copyright: "© 2026 Meryland Handmade Art. All rights reserved. ✨",
-        featuredBadge: "Featured"
+        copyright: "© 2026 Meryland Handmade Art. All rights reserved. ✨"
     },
     bs: {
         heroSubtitle: "✨ Unikatno, vibrantno i ručno rađeno s ljubavlju. Nosite komadić umjetnosti gdje god krenuli. 🎨",
@@ -16,8 +15,7 @@ const translations = {
         added: "Dodano! ✅",
         cartSummary: (count, total) => `Korpa ima ${count} artikala. Ukupno: $${total.toFixed(2)} 💰`,
         footerLinks: ["🏠 Početna", "✨ Kolekcija", "🌿 O nama", "📞 Kontakt"],
-        copyright: "© 2026 Meryland Ručni Radovi. Sva prava zadržana. ✨",
-        featuredBadge: "Izdvajamo"
+        copyright: "© 2026 Meryland Ručni Radovi. Sva prava zadržana. ✨"
     }
 };
 
@@ -25,12 +23,12 @@ let currentLang = 'en';
 
 const products = [
     // ✨ Artful Finds
-    { id: 1, name: "Handmade Gem #1", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 29.99, image: "imgs/✨ Artful Finds/00bb8e18-7c90-4c32-ad2d-9b4a12354070.jpg", isFeatured: true },
+    { id: 1, name: "Handmade Gem #1", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 29.99, image: "imgs/✨ Artful Finds/00bb8e18-7c90-4c32-ad2d-9b4a12354070.jpg" },
     { id: 2, name: "Handmade Gem #2", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 24.99, image: "imgs/✨ Artful Finds/3fe4068b-c0f9-4799-90db-84c8a31365f3.jpg" },
     { id: 3, name: "Handmade Gem #3", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 25.50, image: "imgs/✨ Artful Finds/489580442_1097015352440531_7089408804169926032_n.jpg" },
     { id: 4, name: "Handmade Gem #4", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 28.00, image: "imgs/✨ Artful Finds/489875642_1097845112357555_8689460603483479493_n.jpg" },
     { id: 5, name: "Handmade Gem #5", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 22.99, image: "imgs/✨ Artful Finds/490232185_1097845359024197_4163018510009001749_n.jpg" },
-    { id: 6, name: "Handmade Gem #15", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 26.50, image: "imgs/✨ Artful Finds/500dc61e-d2fe-42ff-9d69-6a4be5f48c51.jpg" },
+    { id: 6, name: "Handmade Gem #6", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 26.50, image: "imgs/✨ Artful Finds/500dc61e-d2fe-42ff-9d69-6a4be5f48c51.jpg" },
     { id: 7, name: "Handmade Gem #7", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 23.99, image: "imgs/✨ Artful Finds/5b088418-0138-4b35-b283-9a53407f6b43.jpg" },
     { id: 8, name: "Handmade Gem #8", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 27.00, image: "imgs/✨ Artful Finds/683c033f-4875-4ea9-9736-5d67298bda1a.jpg" },
     { id: 9, name: "Handmade Gem #9", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 21.99, image: "imgs/✨ Artful Finds/ba76de78-7afa-428b-bedd-a6e5d17468bc.jpg" },
@@ -41,7 +39,7 @@ const products = [
     { id: 14, name: "Handmade Gem #14", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 29.00, image: "imgs/✨ Artful Finds/ff7d91fa-1fbc-4f1e-a4a3-d95026599b33.jpg" },
 
     // 🍓 Bite-Sized
-    { id: 15, name: "Mini Sweet #1", category: { en: "🍓 Bite-Sized", bs: "🍓 Mini kolekcija" }, price: 12.99, image: "imgs/🍓 Bite-Sized/0b1d79a0-8887-44d2-88e8-1b7bfe9244c3.jpg", isFeatured: true },
+    { id: 15, name: "Mini Sweet #1", category: { en: "🍓 Bite-Sized", bs: "🍓 Mini kolekcija" }, price: 12.99, image: "imgs/🍓 Bite-Sized/0b1d79a0-8887-44d2-88e8-1b7bfe9244c3.jpg" },
     { id: 16, name: "Mini Sweet #2", category: { en: "🍓 Bite-Sized", bs: "🍓 Mini kolekcija" }, price: 14.50, image: "imgs/🍓 Bite-Sized/1462fe4f-6d3f-42de-9e31-ec5a4759529f.jpg" },
     { id: 17, name: "Mini Sweet #3", category: { en: "🍓 Bite-Sized", bs: "🍓 Mini kolekcija" }, price: 11.99, image: "imgs/🍓 Bite-Sized/23f945e5-cbfc-4072-a7b3-68f67dcdb171.jpg" },
     { id: 18, name: "Mini Sweet #4", category: { en: "🍓 Bite-Sized", bs: "🍓 Mini kolekcija" }, price: 13.00, image: "imgs/🍓 Bite-Sized/489828762_1097015185773881_2688868655114537375_n.jpg" },
@@ -54,38 +52,20 @@ const products = [
     { id: 23, name: "Perfect Pair #1", category: { en: "💞 Perfect Pairs", bs: "💞 Savršeni parovi" }, price: 34.99, image: "imgs/💞 Perfect Pairs/00bb8e18-7c90-4c32-ad2d-9b4a12354070.jpg" },
     { id: 24, name: "Perfect Pair #2", category: { en: "💞 Perfect Pairs", bs: "💞 Savršeni parovi" }, price: 32.50, image: "imgs/💞 Perfect Pairs/3faff4e0-2810-4341-a6f0-cd295c9d95f5.jpg" },
     { id: 25, name: "Perfect Pair #3", category: { en: "💞 Perfect Pairs", bs: "💞 Savršeni parovi" }, price: 38.00, image: "imgs/💞 Perfect Pairs/489580442_1097015352440531_7089408804169926032_n.jpg" },
-    { id: 26, name: "Perfect Pair #4", category: { en: "💞 Perfect Pairs", bs: "💞 Savršeni parovi" }, price: 36.99, image: "imgs/💞 Perfect Pairs/490183496_1097845349024198_1732809459163790470_n.jpg", isFeatured: true },
+    { id: 26, name: "Perfect Pair #4", category: { en: "💞 Perfect Pairs", bs: "💞 Savršeni parovi" }, price: 36.99, image: "imgs/💞 Perfect Pairs/490183496_1097845349024198_1732809459163790470_n.jpg" },
     { id: 27, name: "Perfect Pair #5", category: { en: "💞 Perfect Pairs", bs: "💞 Savršeni parovi" }, price: 33.50, image: "imgs/💞 Perfect Pairs/4d86d9eb-e750-4594-8a80-4aa0b6d807a9.jpg" },
     { id: 28, name: "Perfect Pair #6", category: { en: "💞 Perfect Pairs", bs: "💞 Savršeni parovi" }, price: 35.00, image: "imgs/💞 Perfect Pairs/5b088418-0138-4b35-b283-9a53407f6b43.jpg" },
     { id: 29, name: "Perfect Pair #7", category: { en: "💞 Perfect Pairs", bs: "💞 Savršeni parovi" }, price: 39.99, image: "imgs/💞 Perfect Pairs/698869d2-7534-41a8-ba47-eae0b8785d04.jpg" },
     { id: 30, name: "Perfect Pair #8", category: { en: "💞 Perfect Pairs", bs: "💞 Savršeni parovi" }, price: 31.50, image: "imgs/💞 Perfect Pairs/843d7642-b3ce-4147-8e77-90a41b5aafb0.jpg" },
     { id: 31, name: "Perfect Pair #9", category: { en: "💞 Perfect Pairs", bs: "💞 Savršeni parovi" }, price: 37.00, image: "imgs/💞 Perfect Pairs/cba9b3f7-8b41-4350-aeb3-54160729fac4.jpg" },
-    { id: 32, name: "Perfect Pair #10", category: { en: "💞 Perfect Pairs", bs: "💞 Savršeni parovi" }, price: 34.50, image: "imgs/💞 Perfect Pairs/ff7d91fa-1fbc-4f1e-a4a3-d95026599b33.jpg", isFeatured: true }
+    { id: 32, name: "Perfect Pair #10", category: { en: "💞 Perfect Pairs", bs: "💞 Savršeni parovi" }, price: 34.50, image: "imgs/💞 Perfect Pairs/ff7d91fa-1fbc-4f1e-a4a3-d95026599b33.jpg" }
 ];
 
 let cart = [];
 
 function init() {
     renderProducts();
-    renderFeaturedSpotlight();
     setupCart();
-}
-
-function renderFeaturedSpotlight() {
-    const featuredGrid = document.getElementById('featured-grid');
-    const featuredProducts = products.filter(p => p.isFeatured);
-    const t = translations[currentLang];
-
-    featuredGrid.innerHTML = featuredProducts.map(product => `
-        <div class="featured-item animate-in" onclick="addToCart(${product.id})">
-            <span class="featured-badge">${t.featuredBadge}</span>
-            <img src="${product.image}" alt="${product.name}" class="featured-img">
-            <div class="featured-info">
-                <h4>${product.name}</h4>
-                <div class="price">$${product.price.toFixed(2)}</div>
-            </div>
-        </div>
-    `).join('');
 }
 
 function renderProducts() {
@@ -117,7 +97,6 @@ function updateUI() {
     });
 
     renderProducts();
-    renderFeaturedSpotlight();
 }
 
 function toggleLanguage() {
@@ -141,34 +120,18 @@ function addToCart(id) {
     updateCartCount();
 
     // Simple feedback
-    const btn = event.target.closest('button') || event.target.closest('.featured-item');
-    if (!btn) return;
-
+    const btn = event.target;
     const t = translations[currentLang];
     const originalText = btn.innerText;
-    const originalBackground = btn.style.background;
+    btn.innerText = t.added;
+    btn.style.background = "#ffd700";
+    btn.style.color = "black";
 
-    if (btn.classList.contains('add-to-cart')) {
-        btn.innerText = t.added;
-        btn.style.background = "#ffd700";
-        btn.style.color = "black";
-    } else {
-        // Spotlight item feedback
-        const info = btn.querySelector('.featured-info');
-        const oldInfo = info.innerHTML;
-        info.innerHTML = `<h4 style="color: var(--accent)">${t.added}</h4>`;
-        setTimeout(() => {
-            info.innerHTML = oldInfo;
-        }, 1500);
-    }
-
-    if (btn.classList.contains('add-to-cart')) {
-        setTimeout(() => {
-            btn.innerText = originalText;
-            btn.style.background = originalBackground;
-            btn.style.color = "";
-        }, 1500);
-    }
+    setTimeout(() => {
+        btn.innerText = originalText;
+        btn.style.background = "";
+        btn.style.color = "";
+    }, 1500);
 }
 
 function updateCartCount() {
