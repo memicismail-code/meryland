@@ -110,7 +110,8 @@ h3 {
 
 /* Header */
 header {
-    height: 100vh;
+    min-height: 40vh;
+    padding: 4rem 0 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -378,5 +379,33 @@ footer {
 @media (max-width: 768px) {
     .container {
         padding: 0 1.5rem;
+    }
+
+    header {
+        min-height: 25vh;
+        padding: 2rem 0 1rem;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .filter-container {
+        margin-bottom: 2rem;
+    }
+
+    .product-grid {
+        gap: 1.5rem;
     }
 }
