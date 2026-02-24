@@ -22,34 +22,33 @@ const translations = {
 let currentLang = 'en';
 
 const products = [
-    {
-        id: 1,
-        name: "Cozy Lover Red",
-        category: { en: "Handmade Keychain", bs: "Ručno rađen privjesak" },
-        price: 15.99,
-        image: "imgs/keychain1.jpg"
-    },
-    {
-        id: 2,
-        name: "Golden Sofa Chill",
-        category: { en: "Handmade Keychain", bs: "Ručno rađen privjesak" },
-        price: 18.50,
-        image: "imgs/keychain2.jpg"
-    },
-    {
-        id: 3,
-        name: "Green Sofa Dream",
-        category: { en: "Handmade Keychain", bs: "Ručno rađen privjesak" },
-        price: 18.50,
-        image: "imgs/keychain3.jpg"
-    },
-    {
-        id: 4,
-        name: "Puzzle Hearts Duo",
-        category: { en: "Handmade Art", bs: "Ručna umjetnost" },
-        price: 24.99,
-        image: "imgs/puzzle.jpg"
-    }
+    // Personalized
+    { id: 1, name: "Handmade Gem #1", category: { en: "Personalized", bs: "Personalizovano" }, price: 29.99, image: "imgs/✨ Personalized/00bb8e18-7c90-4c32-ad2d-9b4a12354070.jpg" },
+    { id: 2, name: "Handmade Gem #2", category: { en: "Personalized", bs: "Personalizovano" }, price: 24.99, image: "imgs/✨ Personalized/489580442_1097015352440531_7089408804169926032_n.jpg" },
+    { id: 3, name: "Handmade Gem #3", category: { en: "Personalized", bs: "Personalizovano" }, price: 25.50, image: "imgs/✨ Personalized/489875642_1097845112357555_8689460603483479493_n.jpg" },
+    { id: 4, name: "Handmade Gem #4", category: { en: "Personalized", bs: "Personalizovano" }, price: 28.00, image: "imgs/✨ Personalized/490232185_1097845359024197_4163018510009001749_n.jpg" },
+    { id: 5, name: "Handmade Gem #5", category: { en: "Personalized", bs: "Personalizovano" }, price: 22.99, image: "imgs/✨ Personalized/500dc61e-d2fe-42ff-9d69-6a4be5f48c51.jpg" },
+    { id: 6, name: "Handmade Gem #6", category: { en: "Personalized", bs: "Personalizovano" }, price: 26.50, image: "imgs/✨ Personalized/5b088418-0138-4b35-b283-9a53407f6b43.jpg" },
+    { id: 7, name: "Handmade Gem #7", category: { en: "Personalized", bs: "Personalizovano" }, price: 23.99, image: "imgs/✨ Personalized/683c033f-4875-4ea9-9736-5d67298bda1a.jpg" },
+    { id: 8, name: "Handmade Gem #8", category: { en: "Personalized", bs: "Personalizovano" }, price: 27.00, image: "imgs/✨ Personalized/ba76de78-7afa-428b-bedd-a6e5d17468bc.jpg" },
+    { id: 9, name: "Handmade Gem #9", category: { en: "Personalized", bs: "Personalizovano" }, price: 21.99, image: "imgs/✨ Personalized/c7330e08-e335-436e-95db-de27b8062356.jpg" },
+    { id: 10, name: "Handmade Gem #10", category: { en: "Personalized", bs: "Personalizovano" }, price: 25.99, image: "imgs/✨ Personalized/c96bc4e2-55e5-4e83-974e-6c49d6c30a00.jpg" },
+    { id: 11, name: "Handmade Gem #11", category: { en: "Personalized", bs: "Personalizovano" }, price: 24.50, image: "imgs/✨ Personalized/dbb56f44-3d7f-4ce1-9eab-9148179ef23e.jpg" },
+    { id: 12, name: "Handmade Gem #12", category: { en: "Personalized", bs: "Personalizovano" }, price: 26.99, image: "imgs/✨ Personalized/f6bcd299-b4d7-47f5-bded-f595cf868bb3.jpg" },
+    { id: 13, name: "Handmade Gem #13", category: { en: "Personalized", bs: "Personalizovano" }, price: 23.50, image: "imgs/✨ Personalized/ff7d91fa-1fbc-4f1e-a4a3-d95026599b33.jpg" },
+
+    // Bite-Sized
+    { id: 14, name: "Mini Sweet #1", category: { en: "Bite-Sized", bs: "Mini kolekcija" }, price: 12.99, image: "imgs/🍓 Bite-Sized/0b1d79a0-8887-44d2-88e8-1b7bfe9244c3.jpg" },
+    { id: 15, name: "Mini Sweet #2", category: { en: "Bite-Sized", bs: "Mini kolekcija" }, price: 14.50, image: "imgs/🍓 Bite-Sized/489828762_1097015185773881_2688868655114537375_n.jpg" },
+    { id: 16, name: "Mini Sweet #3", category: { en: "Bite-Sized", bs: "Mini kolekcija" }, price: 11.99, image: "imgs/🍓 Bite-Sized/489830518_1097015399107193_1092334628566189270_n.jpg" },
+    { id: 17, name: "Mini Sweet #4", category: { en: "Bite-Sized", bs: "Mini kolekcija" }, price: 13.00, image: "imgs/🍓 Bite-Sized/489952830_1097015515773848_2005432897612449203_n.jpg" },
+    { id: 18, name: "Mini Sweet #5", category: { en: "Bite-Sized", bs: "Mini kolekcija" }, price: 12.50, image: "imgs/🍓 Bite-Sized/678b4563-06fc-47f2-94da-a3b6e56f371a.jpg" },
+    { id: 19, name: "Mini Sweet #6", category: { en: "Bite-Sized", bs: "Mini kolekcija" }, price: 14.99, image: "imgs/🍓 Bite-Sized/b88d373c-a1da-4cf4-862c-76bfa7f6e920.jpg" },
+
+    // Perfect Pairs
+    { id: 20, name: "Perfect Pair #1", category: { en: "Perfect Pairs", bs: "Savršeni parovi" }, price: 34.99, image: "imgs/💞 Perfect Pairs/490183496_1097845349024198_1732809459163790470_n.jpg" },
+    { id: 21, name: "Perfect Pair #2", category: { en: "Perfect Pairs", bs: "Savršeni parovi" }, price: 32.50, image: "imgs/💞 Perfect Pairs/4d86d9eb-e750-4594-8a80-4aa0b6d807a9.jpg" },
+    { id: 22, name: "Perfect Pair #3", category: { en: "Perfect Pairs", bs: "Savršeni parovi" }, price: 38.00, image: "imgs/💞 Perfect Pairs/843d7642-b3ce-4147-8e77-90a41b5aafb0.jpg" }
 ];
 
 let cart = [];
