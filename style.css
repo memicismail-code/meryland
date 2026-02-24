@@ -199,6 +199,20 @@ header {
     color: var(--accent);
 }
 
+.product-rating {
+    color: #ffd700;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-feedback {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
 .add-to-cart {
     width: 100%;
     padding: 1rem;
