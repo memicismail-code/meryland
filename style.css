@@ -64,30 +64,95 @@ h3 {
 
 /* Header */
 header {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     background: radial-gradient(circle at center, rgba(106, 13, 173, 0.2) 0%, transparent 70%);
+    padding: 6rem 2rem;
 }
 
 .hero-title {
-    font-size: clamp(3rem, 10vw, 6rem);
+    font-size: clamp(3.5rem, 12vw, 7rem);
     background: var(--gradient);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 1rem;
-    filter: drop-shadow(0 0 20px rgba(255, 0, 128, 0.3));
+    filter: drop-shadow(0 0 30px rgba(255, 0, 128, 0.3));
+    line-height: 1.1;
 }
 
 .hero-subtitle {
     font-size: 1.25rem;
     color: var(--text-dim);
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     max-width: 600px;
+}
+
+/* Hero Spotlight */
+.hero-spotlight {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 2rem;
+}
+
+.featured-item {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 1.5rem;
+    backdrop-filter: blur(12px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-item:hover {
+    transform: translateY(-15px) scale(1.03);
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 0, 128, 0.2);
+}
+
+.featured-img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.featured-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+.featured-info .price {
+    font-weight: 800;
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+.featured-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--gradient);
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 /* Products */
