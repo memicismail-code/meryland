@@ -23,19 +23,19 @@ let currentLang = 'en';
 
 const products = [
     // Personalized
-    { id: 1, name: "Handmade Gem #1", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 29.99, image: "imgs/✨ Personalized/00bb8e18-7c90-4c32-ad2d-9b4a12354070.jpg" },
-    { id: 2, name: "Handmade Gem #2", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 24.99, image: "imgs/✨ Personalized/489580442_1097015352440531_7089408804169926032_n.jpg" },
-    { id: 3, name: "Handmade Gem #3", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 25.50, image: "imgs/✨ Personalized/489875642_1097845112357555_8689460603483479493_n.jpg" },
-    { id: 4, name: "Handmade Gem #4", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 28.00, image: "imgs/✨ Personalized/490232185_1097845359024197_4163018510009001749_n.jpg" },
-    { id: 5, name: "Handmade Gem #5", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 22.99, image: "imgs/✨ Personalized/500dc61e-d2fe-42ff-9d69-6a4be5f48c51.jpg" },
-    { id: 6, name: "Handmade Gem #6", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 26.50, image: "imgs/✨ Personalized/5b088418-0138-4b35-b283-9a53407f6b43.jpg" },
-    { id: 7, name: "Handmade Gem #7", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 23.99, image: "imgs/✨ Personalized/683c033f-4875-4ea9-9736-5d67298bda1a.jpg" },
-    { id: 8, name: "Handmade Gem #8", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 27.00, image: "imgs/✨ Personalized/ba76de78-7afa-428b-bedd-a6e5d17468bc.jpg" },
-    { id: 9, name: "Handmade Gem #9", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 21.99, image: "imgs/✨ Personalized/c7330e08-e335-436e-95db-de27b8062356.jpg" },
-    { id: 10, name: "Handmade Gem #10", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 25.99, image: "imgs/✨ Personalized/c96bc4e2-55e5-4e83-974e-6c49d6c30a00.jpg" },
-    { id: 11, name: "Handmade Gem #11", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 24.50, image: "imgs/✨ Personalized/dbb56f44-3d7f-4ce1-9eab-9148179ef23e.jpg" },
-    { id: 12, name: "Handmade Gem #12", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 26.99, image: "imgs/✨ Personalized/f6bcd299-b4d7-47f5-bded-f595cf868bb3.jpg" },
-    { id: 13, name: "Handmade Gem #13", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 23.50, image: "imgs/✨ Personalized/ff7d91fa-1fbc-4f1e-a4a3-d95026599b33.jpg" },
+    { id: 1, name: "Handmade Gem #1", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 29.99, image: "imgs/✨ Artful Finds/00bb8e18-7c90-4c32-ad2d-9b4a12354070.jpg" },
+    { id: 2, name: "Handmade Gem #2", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 24.99, image: "imgs/✨ Artful Finds/489580442_1097015352440531_7089408804169926032_n.jpg" },
+    { id: 3, name: "Handmade Gem #3", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 25.50, image: "imgs/✨ Artful Finds/489875642_1097845112357555_8689460603483479493_n.jpg" },
+    { id: 4, name: "Handmade Gem #4", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 28.00, image: "imgs/✨ Artful Finds/490232185_1097845359024197_4163018510009001749_n.jpg" },
+    { id: 5, name: "Handmade Gem #5", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 22.99, image: "imgs/✨ Artful Finds/500dc61e-d2fe-42ff-9d69-6a4be5f48c51.jpg" },
+    { id: 6, name: "Handmade Gem #6", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 26.50, image: "imgs/✨ Artful Finds/5b088418-0138-4b35-b283-9a53407f6b43.jpg" },
+    { id: 7, name: "Handmade Gem #7", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 23.99, image: "imgs/✨ Artful Finds/683c033f-4875-4ea9-9736-5d67298bda1a.jpg" },
+    { id: 8, name: "Handmade Gem #8", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 27.00, image: "imgs/✨ Artful Finds/ba76de78-7afa-428b-bedd-a6e5d17468bc.jpg" },
+    { id: 9, name: "Handmade Gem #9", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 21.99, image: "imgs/✨ Artful Finds/c7330e08-e335-436e-95db-de27b8062356.jpg" },
+    { id: 10, name: "Handmade Gem #10", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 25.99, image: "imgs/✨ Artful Finds/c96bc4e2-55e5-4e83-974e-6c49d6c30a00.jpg" },
+    { id: 11, name: "Handmade Gem #11", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 24.50, image: "imgs/✨ Artful Finds/dbb56f44-3d7f-4ce1-9eab-9148179ef23e.jpg" },
+    { id: 12, name: "Handmade Gem #12", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 26.99, image: "imgs/✨ Artful Finds/f6bcd299-b4d7-47f5-bded-f595cf868bb3.jpg" },
+    { id: 13, name: "Handmade Gem #13", category: { en: "✨ Artful Finds", bs: "✨ Pronađena umjetnost" }, price: 23.50, image: "imgs/✨ Artful Finds/ff7d91fa-1fbc-4f1e-a4a3-d95026599b33.jpg" },
 
     // Bite-Sized
     { id: 14, name: "Mini Sweet #1", category: { en: "🍓 Bite-Sized", bs: "🍓 Mini kolekcija" }, price: 12.99, image: "imgs/🍓 Bite-Sized/0b1d79a0-8887-44d2-88e8-1b7bfe9244c3.jpg" },
