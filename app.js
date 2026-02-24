@@ -6,7 +6,13 @@ const translations = {
         added: "Added! ✅",
         cartSummary: (count, total) => `Cart has ${count} items. Total: $${total.toFixed(2)} 💰`,
         footerLinks: ["🏠 Home", "✨ Collection", "🌿 About", "📞 Contact"],
-        copyright: "© 2026 Meryland Handmade Art. All rights reserved. ✨"
+        copyright: "© 2026 Meryland Handmade Art. All rights reserved. ✨",
+        filters: {
+            all: "🛍️ All Collections",
+            biteSized: "🍔 Bite-Sized Series",
+            perfectPairs: "💞 Perfect Pairs",
+            artfulFinds: "✨ Artful Finds"
+        }
     },
     bs: {
         heroSubtitle: "✨ Unikatno, vibrantno i ručno rađeno s ljubavlju. Nosite komadić umjetnosti gdje god krenuli. 🎨",
@@ -15,11 +21,19 @@ const translations = {
         added: "Dodano! ✅",
         cartSummary: (count, total) => `Korpa ima ${count} artikala. Ukupno: $${total.toFixed(2)} 💰`,
         footerLinks: ["🏠 Početna", "✨ Kolekcija", "🌿 O nama", "📞 Kontakt"],
-        copyright: "© 2026 Meryland Ručni Radovi. Sva prava zadržana. ✨"
+        copyright: "© 2026 Meryland Ručni Radovi. Sva prava zadržana. ✨",
+        filters: {
+            all: "🛍️ Sve kolekcije",
+            biteSized: "🍔 Bite-Sized serija",
+            perfectPairs: "💞 Savršeni parovi",
+            artfulFinds: "✨ Artful Finds kolekcija"
+        }
     }
 };
 
 let currentLang = 'en';
+let filterCategory = 'all';
+let cart = [];
 
 const products = [
     // ✨ Artful Finds
@@ -61,17 +75,24 @@ const products = [
     { id: 32, name: "Perfect Pair #10", category: { en: "💞 Perfect Pairs", bs: "💞 Savršeni parovi" }, price: 34.50, image: "imgs/💞 Perfect Pairs/ff7d91fa-1fbc-4f1e-a4a3-d95026599b33.jpg" }
 ];
 
-let cart = [];
+// Initial state removed above
+
 
 function init() {
     renderProducts();
     setupCart();
+    setupFilters();
 }
 
 function renderProducts() {
     const grid = document.getElementById('product-grid');
     const t = translations[currentLang];
-    grid.innerHTML = products.map(product => `
+
+    const filteredProducts = filterCategory === 'all'
+        ? products
+        : products.filter(p => p.category.en.includes(filterCategory));
+
+    grid.innerHTML = filteredProducts.map(product => `
         <div class="product-card animate-in">
             <img src="${product.image}" alt="${product.name}" class="product-image">
             <div class="product-info">
@@ -96,7 +117,22 @@ function updateUI() {
         li.innerText = t.footerLinks[index];
     });
 
+    // Update filter options
+    const filterSelect = document.getElementById('category-filter');
+    filterSelect.options[0].text = t.filters.all;
+    filterSelect.options[1].text = t.filters.biteSized;
+    filterSelect.options[2].text = t.filters.perfectPairs;
+    filterSelect.options[3].text = t.filters.artfulFinds;
+
     renderProducts();
+}
+
+function setupFilters() {
+    const filterSelect = document.getElementById('category-filter');
+    filterSelect.addEventListener('change', (e) => {
+        filterCategory = e.target.value;
+        renderProducts();
+    });
 }
 
 function toggleLanguage() {
