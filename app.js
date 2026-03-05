@@ -164,8 +164,35 @@ function toggleLanguage() {
 function setupCart() {
     const cartBtn = document.getElementById('cart-btn');
     cartBtn.addEventListener('click', () => {
-        const t = translations[currentLang];
-        alert(t.cartSummary(cart.length, cart.reduce((sub, item) => sub + item.price, 0)));
+        if (cart.length === 0) {
+            alert(currentLang === 'en' ? 'Your cart is empty!' : 'Vaša korpa je prazna!');
+            return;
+        }
+
+        let message = currentLang === 'en' ? 'Hello! I would like to order the following items:\n\n' : 'Zdravo! Želim naručiti sljedeće artikle:\n\n';
+        let total = 0;
+
+        // Group items by ID or simply list them
+        const itemCounts = {};
+        cart.forEach(item => {
+            if (itemCounts[item.id]) {
+                itemCounts[item.id].quantity += 1;
+            } else {
+                itemCounts[item.id] = { ...item, quantity: 1 };
+            }
+        });
+
+        Object.values(itemCounts).forEach((item, index) => {
+            message += `${index + 1}. ${item.name} (x${item.quantity}) - $${(item.price * item.quantity).toFixed(2)}\n`;
+            total += item.price * item.quantity;
+        });
+
+        const totalText = currentLang === 'en' ? 'Total' : 'Ukupno';
+        message += `\n**${totalText}: $${total.toFixed(2)}**`;
+
+        const whatsappNumber = '38762600382';
+        const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
     });
 }
 
